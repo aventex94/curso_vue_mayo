@@ -1,26 +1,14 @@
 <template>
-	<div id="app">
-		<Home auth="Casa" />
-	</div>
+	<Base />
 </template>
 
 <script>
-	import Home from "./components/Home";
+	import Base from "./components/layout/Base";
+
 	export default {
 		name: "App",
 		components: {
-			Home,
+			Base,
 		},
 	};
 </script>
-
-<style>
-	#app {
-		font-family: Avenir, Helvetica, Arial, sans-serif;
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
-		text-align: center;
-		color: #2c3e50;
-		margin-top: 60px;
-	}
-</style>
