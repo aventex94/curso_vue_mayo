@@ -1,11 +1,10 @@
 <template>
-	<v-form v-model="valid">
+	<v-form>
 		<v-container>
 			<v-row>
 				<v-col cols="12" md="4">
 					<v-text-field
-						v-model="firstname"
-						:rules="nameRules"
+						v-model="firstName"
 						:counter="10"
 						label="First name"
 						required
@@ -14,8 +13,7 @@
 
 				<v-col cols="12" md="4">
 					<v-text-field
-						v-model="lastname"
-						:rules="nameRules"
+						v-model="lastName"
 						:counter="10"
 						label="Last name"
 						required
@@ -23,13 +21,7 @@
 				</v-col>
 
 				<v-col cols="12" md="4">
-					<v-text-field
-						v-model="email"
-						:rules="emailRules"
-						label="E-mail"
-						:error="errorMail"
-						required
-					></v-text-field>
+					<v-text-field v-model="email" label="E-mail" required></v-text-field>
 					<v-btn class="mt-6" text color="primary" @click="agregar()"> Agregar </v-btn>
 				</v-col>
 			</v-row>
@@ -42,16 +34,12 @@
 			firstName: "",
 			lastName: "",
 			email: "",
-			user: {
-				firstName: "",
-				lastName: "",
-			},
 		}),
+		mounted() {},
 		methods: {
-			verificarEmail() {
-				return false;
+			agregar() {
+				this.$store.dispatch("setFirstName", this.firstName);
 			},
-			agregar() {},
 		},
 	};
 </script>
